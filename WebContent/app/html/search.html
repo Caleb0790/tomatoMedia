@@ -10,7 +10,7 @@
 	</tr>
 	<tr data-ng-repeat="media in list | filter:search">
 		<td>
-			<img src="media.images.couverture" />
+			<img src="http://192.168.1.16:8090/{{media.images.couverture}}" />
 		</td>
 		<td>
 			<span data-ng-bind="media.titre"></span>
