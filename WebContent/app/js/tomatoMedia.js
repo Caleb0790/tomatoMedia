@@ -1,1 +1,1 @@
-angular.module('tomatoMedia', []);
+angular.module('tomatoMedia', ['media']);
