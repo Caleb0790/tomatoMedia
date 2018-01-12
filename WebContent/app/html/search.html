@@ -1,0 +1,17 @@
+<input type="text" data-ng-model="search.title" placeholder="ex: Lanfeust, Thorgal, Star Wars, ..." >
+
+<table class="table table-striped">
+	<tr>
+		<td>Titre</td>
+		<td>Fiche d&eacutetaill&eacutee</td>
+	</tr>
+	<tr data-ng-repeat="media in list | filter:recherche">
+		<td>
+			<span data-ng-bind="media.title"></span>
+			<!-- <poke-details value="poke"></poke-details> -->
+		</td>
+		<td>
+			<a href="#!/poke/{{poke.url.substring(poke.url.substring(0, poke.url.length-1).lastIndexOf('/')+1, poke.url.length-1)}}">...details</a>
+		</td>
+	</tr>
+</table>
