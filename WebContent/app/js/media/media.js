@@ -1,4 +1,4 @@
-angular.module('media', ['tomatoMedia', 'ngRoute'].config(function($routeProvider) {
+angular.module('media', ['tomatoMedia', 'ngRoute']).config(function($routeProvider) {
 	$routeProvider
 		.when('/media-search', {
 			templateUrl: './html/search.html',
@@ -7,4 +7,4 @@ angular.module('media', ['tomatoMedia', 'ngRoute'].config(function($routeProvide
 		.otherwise({
 			redirectTo: '/media-search'
 		})
-}));
+});

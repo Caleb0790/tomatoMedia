@@ -1,7 +1,8 @@
-<input type="text" data-ng-model="search.title" placeholder="ex: Lanfeust, Thorgal, Star Wars, ..." >
+<input type="text" data-ng-model="search.titre" placeholder="ex: Lanfeust, Thorgal, Star Wars, ..." >
 <br><hr>
 <table class="table table-striped">
 	<tr>
+		<td></td>
 		<td>Titre</td>
 		<td>Auteur</td>
 		<td>Type</td>
@@ -12,13 +13,13 @@
 			<img src="media.images.couverture" />
 		</td>
 		<td>
-			<span data-ng-bind="media.title"></span>
+			<span data-ng-bind="media.titre"></span>
 		</td>
 		<td>
 			<span data-ng-bind="media.auteur"></span>
 		</td>
 		<td>
-			<span data-ng-bind="media.title"></span>
+			<span data-ng-bind="media.type"></span>
 		</td>
 		<td>
 			<a href="#!/">d&eacutetails</a>
