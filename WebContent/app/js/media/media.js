@@ -1,4 +1,5 @@
-angular.module('media', ['tomatoMedia', 'ngRoute']).config(function($routeProvider) {
+angular.module('media', ['ngRoute']).config(function($routeProvider) {
+	console.log('aaa');
 	$routeProvider
 		.when('/media-search', {
 			templateUrl: './html/search.html',
