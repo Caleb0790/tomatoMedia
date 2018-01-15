@@ -13,7 +13,7 @@
 	<tbody>
 		<tr data-ng-repeat="media in list | filter:search">
 			<td>
-				<span x-ng-bind="media.id+1"></span>
+				<span x-ng-bind="media.id"></span>
 			</td>
 			<td>
 				<img x-ng-show="media.emprunteur" src="./img/dispo.png" data-toggle="tooltip" data-placement="bottom" title="Disponible !" />
