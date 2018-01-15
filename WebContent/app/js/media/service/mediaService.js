@@ -1,6 +1,6 @@
 angular.module('media').service('mediaService', ['$http', function($http){
-	var mediaPromise= $http.get('http://192.168.1.16:8090/resource/media.recherche', {});
-	//var mediaDvdPromise= $http.get('http://192.168.1.16:8090/resource/media.recherche', {params:{page:15}});
+	var mediaPromise= $http.get('http://192.168.1.14:8090/resource/media.recherche', {});
+	//var mediaDvdPromise= $http.get('http://192.168.1.14:8090/resource/media.recherche', {params:{page:15}});
 	
 	
 	this.getAll = function(){
@@ -27,7 +27,7 @@ angular.module('media').service('mediaService', ['$http', function($http){
 	
 	this.getOne = function(mediaId){
 		if(!alreadyLoadedMedia[mediaId]){
-			alreadyLoadedMedia[mediaId] = $http.get('http://192.168.1.16:8090/resource/media.accession/'+mediaId);
+			alreadyLoadedMedia[mediaId] = $http.get('http://192.168.1.14:8090/resource/media.accession/'+mediaId);
 		}
 		return alreadyLoadedMedia[mediaId].then(function(response){
 			return response;

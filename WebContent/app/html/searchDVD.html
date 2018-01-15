@@ -1,8 +1,9 @@
+<a href="#!/media-search">Retour a la liste principale</a> <br>
 <input type="text" data-ng-model="search.id" placeholder="ex: Lanfeust, Thorgal, Star Wars, ..." ><br>
 Search by Type:
-<button class="book"><a href="#!/searchBook.html">Book</a></button>
-<button class="cd"><a href="#!/searchCD.html">CD</a></button>
-<button class="dvd"><a href="#!/searchDVD.html">DVD</a></button>
+<button class="book"><a href="#!/media-search/searchBook">Book</a></button>
+<button class="cd"><a href="#!/media-search/searchCD">CD</a></button>
+<button class="dvd"><a href="#!/media-search/searchDVD">DVD</a></button>
 <br><hr>
 <table class="table table-striped">
 	<tr class="enteteTab">
@@ -13,12 +14,12 @@ Search by Type:
 		<td>Type</td>
 		<td>Fiche d&eacutetaill&eacutee</td>
 	</tr>
-	<tr data-ng-repeat="media in list | filter:search">
+	<tr data-ng-repeat="media in dvds | filter:search">
 		<td>
 			<span x-ng-bind="media.id+1"></span>
 		</td>
 		<td>
-			<img src="http://192.168.1.16:8090/{{media.images.couverture}}" />
+			ii<img src="http://192.168.1.14:8090/{{media.images.couverture}}" />
 		</td>
 		<td>
 			<span data-ng-bind="media.titre"></span>
