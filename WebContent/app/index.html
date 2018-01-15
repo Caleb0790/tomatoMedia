@@ -21,14 +21,17 @@
 </head>
 <body class="container">
 	<br>
-	<br><a href="#!/media-search">Retour a la liste principale</a> <br>
-	<input type="text" data-ng-model="search.id" placeholder="ex: Lanfeust, Thorgal, Star Wars, ..." ><br>
-	Search by Type:
-	<a href="#!/media-search/searchBook">Book</a>
-	<a href="#!/media-search/searchCD">CD</a>
-	<a href="#!/media-search/searchDVD">DVD</a>
-	<br><hr>
-	
-	<div x-ng-view></div>
+	<br>
+	<div>
+		<ul class="nav nav-tabs nav-justified">
+			<li><a href="#!/home">Home</a></li>
+			<li><a href="#!/media-search">Medias</a></li>
+			<li><a href="#!/media-search/searchBook">Books</a></li>
+			<li><a href="#!/media-search/searchCD">CDs</a></li>
+			<li><a href="#!/media-search/searchDVD">DVDs</a></li>
+			<li><input type="text" data-ng-model="search.id" placeholder="ex: Lanfeust, Thorgal, Star Wars, ..." ></li>
+    	</ul>
+	</div>
+		<div x-ng-view></div>
 </body>
 </html>

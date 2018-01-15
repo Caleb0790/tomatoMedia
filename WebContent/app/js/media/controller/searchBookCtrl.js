@@ -2,10 +2,10 @@
  * Controleur pour la recherche de livres
  */
 angular.module('media').controller('searchBookCtrl', ['$scope', 'mediaService', function($scope, mediaService) {
-	$scope.books = [];
+	$scope.list = [];
 	console.log('controller for books');
 	mediaService.getBooks().then(function(BookList) {
-		$scope.books = BookList;
+		$scope.list = BookList;
 		console.log('Book list loaded !');
 	});
 }]);
