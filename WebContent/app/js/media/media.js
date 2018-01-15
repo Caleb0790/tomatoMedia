@@ -40,12 +40,12 @@ angular.module('media', ['ngRoute']).config(function($routeProvider) {
 				}
 			}
 		})
+		.when('/edit/:id', {
+			templateUrl: './html/modif.html'
+		})
 		.when('/media-search/:id', {
 			templateUrl: './html/mediaDetails.html',
 			controller: 'mediaDetailsCtrl'
-		})
-		.when('/edit/:id', {
-			templateUrl: './html/modif.html'
 		})
 		.otherwise({
 			redirectTo: '/media-search'
