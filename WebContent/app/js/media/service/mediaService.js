@@ -10,6 +10,11 @@ angular.module('media').service('mediaService', ['$http', function($http){
 		})
 	}
 	
+	this.reload = function() {
+		mediaPromise = $http.get('http://192.168.1.14:8090/resource/media.recherche', {});
+		return mediaPromise;
+	}
+	
 	this.getDvds = function(){
 		return mediaPromise.then( function(response){
 			var dvds= response.data.filter(element => element.type == 'DVD');
@@ -44,14 +49,16 @@ angular.module('media').service('mediaService', ['$http', function($http){
 	}
 	
 	this.editMedia = function(media) {
-		media.titre = $scope.media.titre;
-		media.auteur = $scope.media.auteur;
-		media.type = $scope.media.type;
-		var mediaModif= $http.post('http://192.168.1.14:8090/resource/media.modification', media, {});
-		mediaModif.then(function() {
-			console.log('Edit success !');
-		}, function() {
-			console.log('Edit failed !');
+		return $http.post('http://192.168.1.14:8090/resource/media.modification', media, {}).then(function(response){
+			mediaService.reload();
+			return response.data;
+		});
+	}
+	
+	this.addMedia = function(media) {
+		return $http.post('http://192.168.1.14:8090/resource/media.creation', media, {}).then(function(response) {
+			mediaService.reload();
+			return response.data;
 		})
 	}
 }])

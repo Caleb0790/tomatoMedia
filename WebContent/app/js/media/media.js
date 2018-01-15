@@ -48,6 +48,10 @@ angular.module('media', ['ngRoute']).config(function($routeProvider) {
 			templateUrl: './html/mediaDetails.html',
 			controller: 'mediaDetailsCtrl'
 		})
+		.when('/add', {
+			templateUrl: './html/addMedia.html',
+			controller: 'addCtrl'
+		})
 		.otherwise({
 			redirectTo: '/media-search'
 		})
