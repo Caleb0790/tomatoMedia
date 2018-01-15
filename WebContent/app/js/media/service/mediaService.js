@@ -23,6 +23,13 @@ angular.module('media').service('mediaService', ['$http', function($http){
 		})
 	}
 	
+	this.getCds = function(){
+		return mediaPromise.then( function(response){
+			var cds= response.data.filter(element => element.type == 'CD');
+			return cds;
+		})
+	}
+	
 	var alreadyLoadedMedia = {} ;
 	
 	this.getOne = function(mediaId){
