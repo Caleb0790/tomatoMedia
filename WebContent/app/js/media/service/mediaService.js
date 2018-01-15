@@ -50,14 +50,14 @@ angular.module('media').service('mediaService', ['$http', function($http){
 	
 	this.editMedia = function(media) {
 		return $http.post('http://192.168.1.14:8090/resource/media.modification', media, {}).then(function(response){
-			mediaService.reload();
+			reload();
 			return response.data;
 		});
 	}
 	
 	this.addMedia = function(media) {
 		return $http.post('http://192.168.1.14:8090/resource/media.creation', media, {}).then(function(response) {
-			mediaService.reload();
+			this.reload();
 			return response.data;
 		})
 	}
