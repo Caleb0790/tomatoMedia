@@ -41,4 +41,9 @@ angular.module('media').service('mediaService', ['$http', function($http){
 			return response;
 		})
 	}
+	
+	this.editMedia = function(mediaId) {
+		var media = getOne(mediaId);
+		
+	}
 }])
