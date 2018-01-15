@@ -35,10 +35,10 @@ angular.module('media').service('mediaService', ['$http', function($http){
 	
 	this.getOne = function(mediaId){
 		if(!alreadyLoadedMedia[mediaId]){
-			alreadyLoadedMedia[mediaId] = $http.get('http://192.168.1.14:8090/resource/media.accession/'+mediaId);
+			alreadyLoadedMedia[mediaId] = $http.get('http://192.168.1.14:8090/resource/media.accession/', {params:{id:mediaId}});
 		}
 		return alreadyLoadedMedia[mediaId].then(function(response){
-			return response;
+			return response.data;
 		})
 	}
 	
