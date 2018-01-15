@@ -1,7 +1,7 @@
 angular.module('media').service('mediaService', ['$http', function($http){
 	var mediaPromise= $http.get('http://192.168.1.14:8090/resource/media.recherche', {});
 	//var mediaDvdPromise= $http.get('http://192.168.1.14:8090/resource/media.recherche', {params:{page:15}});
-	
+	var mediaModif= $http.get('http://192.168.1.14:8090/resource/media.modification', {});
 	
 	this.getAll = function(){
 		return mediaPromise.then( function(response){
