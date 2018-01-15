@@ -1,0 +1,16 @@
+
+	<span x-ng-bind="media.id"></span>
+
+	<img x-ng-show="media.emprunteur" src="./img/dispo.png" data-toggle="tooltip" data-placement="bottom" title="Disponible !" />
+	<img x-ng-show="!media.emprunteur" src="./img/indispo.png"  data-toggle="tooltip" data-placement="bottom" title="Déjà emprunté"/>
+
+	<img src="http://192.168.1.14:8090/{{media.images.couverture}}" />
+
+	<span data-ng-bind="media.titre"></span>
+
+	<span data-ng-bind="media.auteur"></span>
+
+	<span data-ng-bind="media.type"></span>
+
+	<a href="#!/media-search/{{media.id}}"><span class="fa fa-search-plus" data-toggle="tooltip" data-placement="bottom" title="Details"></span></a>
+	<a href="#!/edit/{{media.id}}"><span class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="bottom" title="Edit"></span></a>
