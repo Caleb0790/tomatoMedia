@@ -35,15 +35,23 @@ angular.module('media').service('mediaService', ['$http', function($http){
 	
 	this.getOne = function(mediaId){
 		if(!alreadyLoadedMedia[mediaId]){
-			alreadyLoadedMedia[mediaId] = $http.get('http://192.168.1.14:8090/resource/media.accession/', {params:{id:mediaId}});
+			alreadyLoadedMedia[mediaId] = $http.get('http://192.168.1.14:8090/resource/media.accession/', {params: {id: mediaId}});
 		}
 		return alreadyLoadedMedia[mediaId].then(function(response){
+			console.log(response.data);
 			return response.data;
 		})
 	}
 	
-	this.editMedia = function(mediaId) {
-		var media = getOne(mediaId);
-		
+	this.editMedia = function(media) {
+		media.titre = $scope.media.titre;
+		media.auteur = $scope.media.auteur;
+		media.type = $scope.media.type;
+		var mediaModif= $http.post('http://192.168.1.14:8090/resource/media.modification', media, {});
+		mediaModif.then(function() {
+			console.log('Edit success !');
+		}, function() {
+			console.log('Edit failed !');
+		})
 	}
 }])

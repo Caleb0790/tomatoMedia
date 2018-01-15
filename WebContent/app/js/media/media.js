@@ -41,7 +41,8 @@ angular.module('media', ['ngRoute']).config(function($routeProvider) {
 			}
 		})
 		.when('/edit/:id', {
-			templateUrl: './html/modif.html'
+			templateUrl: './html/modif.html',
+			controller: 'editCtrl'
 		})
 		.when('/media-search/:id', {
 			templateUrl: './html/mediaDetails.html',
