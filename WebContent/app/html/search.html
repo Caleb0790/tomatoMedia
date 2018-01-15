@@ -1,30 +1,40 @@
 <table class="table table-striped">
-	<tr class="enteteTab">
-		<td>Id</td>
-		<td></td>
-		<td>Titre</td>
-		<td>Auteur</td>
-		<td>Type</td>
-		<td>Fiche d&eacutetaill&eacutee</td>
-	</tr>
-	<tr data-ng-repeat="media in list | filter:search">
-		<td>
-			<span x-ng-bind="media.id+1"></span>
-		</td>
-		<td>
-			<img src="http://192.168.1.14:8090/{{media.images.couverture}}" />
-		</td>
-		<td>
-			<span data-ng-bind="media.titre"></span>
-		</td>
-		<td>
-			<span data-ng-bind="media.auteur"></span>
-		</td>
-		<td>
-			<span data-ng-bind="media.type"></span>
-		</td>
-		<td>
-			<a href="#!/media-search/{{media.id}}">d&eacutetails</a>
-		</td>
-	</tr>
+	<thead class="thead-dark">
+		<tr>
+			<th class="col">Id</th>
+			<th>Disponibilit&eacute</th>
+			<th class="col"></th>
+			<th class="col">Titre</th>
+			<th class="col">Auteur</th>
+			<th class="col">Type</th>
+			<th class="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat="media in list | filter:search">
+			<td>
+				<span x-ng-bind="media.id+1"></span>
+			</td>
+			<td>
+				<img x-ng-show="media.emprunteur" src="./img/dispo.png" data-toggle="tooltip" data-placement="bottom" title="Disponible !" />
+				<img x-ng-show="!media.emprunteur" src="./img/indispo.png"  data-toggle="tooltip" data-placement="bottom" title="Déjà emprunté"/>
+			</td>
+			<td>
+				<img src="http://192.168.1.14:8090/{{media.images.couverture}}" />
+			</td>
+			<td>
+				<span data-ng-bind="media.titre"></span>
+			</td>
+			<td>
+				<span data-ng-bind="media.auteur"></span>
+			</td>
+			<td>
+				<span data-ng-bind="media.type"></span>
+			</td>
+			<td>
+				<a href="#!/media-search/{{media.id}}"><span class="fa fa-search-plus" data-toggle="tooltip" data-placement="bottom" title="Details"></span></a>
+				<a href="#!/edit/{{media.id}}"><span class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="bottom" title="Edit"></span></a>
+			</td>
+		</tr>
+	</tbody>
 </table>
