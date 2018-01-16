@@ -1,0 +1,20 @@
+{
+  "name": "tomatomedia",
+  "devDependencies": {
+    "jasmine-core": "^2.8.0",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-phantomjs-launcher": "*",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.1"
+  },
+  "scripts": {
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js"
+  },
+  "version": "1.0.0",
+  "main": "app/index.html",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
