@@ -16,5 +16,14 @@
   "main": "app/index.html",
   "author": "",
   "license": "ISC",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caleb0790/tomatoMedia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Caleb0790/tomatoMedia/issues"
+  },
+  "homepage": "https://github.com/Caleb0790/tomatoMedia#readme",
   "description": ""
 }
