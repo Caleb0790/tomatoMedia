@@ -7,8 +7,11 @@ angular.module('media').controller('editCtrl', ['$scope','$routeParams', 'mediaS
 		$scope.media = media;
 	});
 	$scope.submitForm = function() {
-		return mediaService.editMedia($scope.media).then(function(media) {
-			return media;
-		});
+		return mediaService.editMedia($scope.media)
+				.then(
+					function(media) {
+						mediaService.reload();
+						return media;
+				});
 	}
 }])

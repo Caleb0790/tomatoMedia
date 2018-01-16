@@ -1,5 +1,8 @@
 angular.module('media').service('mediaService', ['$http', function($http){
-	var mediaPromise= $http.get('http://192.168.1.14:8090/resource/media.recherche', {});
+	
+	var host = 'http://127.0.0.1';
+	var port = '8090';
+	var mediaPromise= $http.get(host +':' + port + '/resource/media.recherche', {});
 	//var mediaDvdPromise= $http.get('http://192.168.1.14:8090/resource/media.recherche', {params:{page:15}});
 	//var mediaModif= $http.post('http://192.168.1.14:8090/resource/media.modification', {});
 	
@@ -11,7 +14,7 @@ angular.module('media').service('mediaService', ['$http', function($http){
 	}
 	
 	this.reload = function() {
-		mediaPromise = $http.get('http://192.168.1.14:8090/resource/media.recherche', {});
+		mediaPromise = $http.get(host +':' + port + '/resource/media.recherche', {});
 		return mediaPromise;
 	}
 	
@@ -40,7 +43,7 @@ angular.module('media').service('mediaService', ['$http', function($http){
 	
 	this.getOne = function(mediaId){
 		if(!alreadyLoadedMedia[mediaId]){
-			alreadyLoadedMedia[mediaId] = $http.get('http://192.168.1.14:8090/resource/media.accession/', {params: {id: mediaId}});
+			alreadyLoadedMedia[mediaId] = $http.get(host +':' + port + '/resource/media.accession/', {params: {id: mediaId}});
 		}
 		return alreadyLoadedMedia[mediaId].then(function(response){
 			console.log(response.data);
@@ -49,15 +52,15 @@ angular.module('media').service('mediaService', ['$http', function($http){
 	}
 	
 	this.editMedia = function(media) {
-		return $http.post('http://192.168.1.14:8090/resource/media.modification', media, {}).then(function(response){
-			reload();
+		return $http.post(host +':' + port + '/resource/media.modification', media, {}).then(function(response){
+			//reload();
 			return response.data;
 		});
 	}
 	
 	this.addMedia = function(media) {
-		return $http.post('http://192.168.1.14:8090/resource/media.creation', media, {}).then(function(response) {
-			this.reload();
+		return $http.post(host +':' + port + '/resource/media.creation', media, {}).then(function(response) {
+			//reload();
 			return response.data;
 		})
 	}
