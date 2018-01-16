@@ -14,3 +14,24 @@
 
 	<a href="#!/media-search/{{media.id}}"><span class="fa fa-search-plus" data-toggle="tooltip" data-placement="bottom" title="Details"></span></a>
 	<a href="#!/edit/{{media.id}}"><span class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="bottom" title="Edit"></span></a>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://192.168.1.14:8090/{{media.images.couverture}}" alt="...">
+      <div class="caption">
+        <h3><span data-ng-bind="media.titre"></span></h3>
+        <p>
+        	<span data-ng-bind="media.auteur"></span>
+			<span data-ng-bind="media.type"></span>	
+        </p>
+        <p>
+        	<a href="#!/edit/{{media.id}}" class="btn btn-primary" role="button">Edit</a> 
+        	<a href="#" class="btn btn-default" role="button">Button</a>
+			<img x-ng-show="media.emprunteur" src="./img/dispo.png" data-toggle="tooltip" data-placement="bottom" title="Disponible !" />
+			<img x-ng-show="!media.emprunteur" src="./img/indispo.png"  data-toggle="tooltip" data-placement="bottom" title="Déjà emprunté"/>
+   		</p>
+      </div>
+    </div>
+  </div>
+</div>
